@@ -1,0 +1,17 @@
+Sudo apt update && sudo apt upgrade
+Sudo apt install openssh-server
+Sudo systemctl enable –now ssh
+Sudo systemctl status ssh
+Sudo ufw enable
+Sudo ufw status
+Sudo ufw allow ssh
+Hostname -I (127.0.1.1)
+Ssh cal@127.0.1.1
+Sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.initial
+Sudo nano /etc/ssh/sshd_config
+Меняем port 49532 и убираем комменты
+PubkeyAuthentication yes убираем коммы
+PermitRootLogin  no убираем коммы
+Сохранение nano файла
+Sudo systemctl restart ssh
+Выполняем подключение ssh cal@127.0.1.1 -p 49532
